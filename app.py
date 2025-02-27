@@ -44,5 +44,25 @@ def divide_numbers():
     except ValueError:
         return jsonify({'error': 'Invalid input'}), 400
 
+@app.route('/power', methods=['GET'])
+def power_numbers():
+    try:
+        num1 = float(request.args.get('num1', 0))
+        num2 = float(request.args.get('num2', 0))
+        return jsonify({'result': num1 ** num2})
+    except ValueError:
+        return jsonify({'error': 'Invalid input'}), 400
+
+@app.route('/modulus', methods=['GET'])
+def modulus_numbers():
+    try:
+        num1 = float(request.args.get('num1', 0))
+        num2 = float(request.args.get('num2', 1))
+        if num2 == 0:
+            return jsonify({'error': 'Cannot divide by zero'}), 400
+        return jsonify({'result': num1 % num2})
+    except ValueError:
+        return jsonify({'error': 'Invalid input'}), 400
+
 if __name__ == '__main__':
     app.run(debug=True)
