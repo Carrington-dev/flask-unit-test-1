@@ -22,11 +22,11 @@ def test_add_numbers_invalid(client):
     assert response.get_json() == {'error': 'Invalid input'}
 
 def test_multiply_numbers_invalid(client):
-    response = client.get('/add?num1=abc&num2=10')
+    response = client.get('/multiply?num1=abc&num2=10')
     assert response.status_code == 400
     assert response.get_json() == {'error': 'Invalid input'}
 
-def test_multiply_numbers_invalid(client):
-    response = client.get('/add?num1=abc&num2=10')
+def test_subtract_numbers_invalid(client):
+    response = client.get('/subtract?num1=abc&num2=10')
     assert response.status_code == 400
     assert response.get_json() == {'error': 'Invalid input'}
