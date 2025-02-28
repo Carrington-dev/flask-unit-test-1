@@ -20,3 +20,13 @@ def test_add_numbers_invalid(client):
     response = client.get('/add?num1=abc&num2=10')
     assert response.status_code == 400
     assert response.get_json() == {'error': 'Invalid input'}
+
+def test_multiply_numbers_invalid(client):
+    response = client.get('/add?num1=abc&num2=10')
+    assert response.status_code == 400
+    assert response.get_json() == {'error': 'Invalid input'}
+
+def test_multiply_numbers_invalid(client):
+    response = client.get('/add?num1=abc&num2=10')
+    assert response.status_code == 400
+    assert response.get_json() == {'error': 'Invalid input'}
